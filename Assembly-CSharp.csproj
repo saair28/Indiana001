@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\PlayerControlle.cs" />
     <Compile Include="Assets\Scripts\Pulsar.cs" />
     <Compile Include="Assets\Scripts\ScrollWheel.cs" />
+    <Compile Include="Assets\Scripts\ThirdPersonCameraController.cs" />
     <Compile Include="Assets\Scripts\TopDownCam.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>H:/3CicloDeDiseñoVideojuegos/Taller3D/AvancesDeProyecto/avance5/Taller_3D_Proyecto_Indiana-master/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

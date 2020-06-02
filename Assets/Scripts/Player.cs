@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
-    private Camera mainCamera;
+    //private Camera mainCamera;
     
     public int Could = 1;
 
@@ -27,17 +27,18 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        /*
         mainCamera = FindObjectOfType<Camera>();
+        */
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-
-        transform.position += new Vector3(h, 0f, v);
-
+        PlayerMovement();
+        
+        /*
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
@@ -48,9 +49,19 @@ public class Player : MonoBehaviour
 
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
+        */
 
         jump();
 
+    }
+
+    void PlayerMovement()
+    {
+        float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        Vector3 playerMovement = new Vector3(h, 0f, v) * speed * Time.deltaTime;
+        transform.Translate(playerMovement, Space.Self);
     }
 
     void jump()
