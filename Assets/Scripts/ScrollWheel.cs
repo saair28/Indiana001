@@ -4,40 +4,81 @@ using UnityEngine;
 
 public class ScrollWheel : MonoBehaviour
 {
-    public GameObject Weapons1;
-
-    public GameObject Weapons2;
-
-    public GameObject Weapons3;
+    public int SeleccionadaArma = 0;
 
 
-   /* // Start is called before the first frame update
+   // Start is called before the first frame update
     void Start()
     {
-        var Weapons : GameObject[];
-
-        var CurrentWeapon : GameObject;
-
-        var WeaponNumber = 0;
-
-        CurrentWeapon = Weapons[0];
+        SeleccionArma();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel"))
+
+        int previusSeleccionadaArma = SeleccionadaArma;    
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            if (SeleccionadaArma >= transform.childCount - 1)
             {
-                WeaponNumber = (WeaponNumber + 1);
+                SeleccionadaArma = 0;
             }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            else
             {
-                WeaponNumber = (WeaponNumber - 1);
+                SeleccionadaArma++;
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            if (SeleccionadaArma <= 0)
+            {
+                SeleccionadaArma = transform.childCount - 1;
+            }
+            else
+            {
+                SeleccionadaArma--;
             }
         }
 
-        CurrentWeapon = Weapons[WeaponNumber];
-    }*/
+       /* if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SeleccionadaArma = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
+        {
+            SeleccionadaArma = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        {
+            SeleccionadaArma = 2;
+        }
+        */
+
+        if (previusSeleccionadaArma != SeleccionadaArma)
+        {
+            SeleccionArma();
+        }
+    }
+
+    void SeleccionArma()
+    {
+        int i = 0;
+
+        foreach (Transform weapon in transform)
+        {
+            if (i == SeleccionadaArma)
+            {
+                weapon.gameObject.SetActive(true);
+            }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+                i++;
+            }
+        }
+    }
 }
