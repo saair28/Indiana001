@@ -19,8 +19,10 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
+    public float weaponNumber; 
+
     //private Camera mainCamera;
-    
+
     public int Could = 1;
 
     // Start is called before the first frame update
@@ -30,7 +32,8 @@ public class Player : MonoBehaviour
         /*
         mainCamera = FindObjectOfType<Camera>();
         */
-        
+        //CurrentWeapon = Weapons[0];
+
     }
 
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
         */
 
         jump();
+        ChangeWeapon();
 
     }
 
@@ -86,5 +90,22 @@ public class Player : MonoBehaviour
                 Could = 1;
             }
         }
+    }
+
+    void ChangeWeapon()
+    {/*
+        if (Input.GetAxis("Mouse ScrollWheel")) { }
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                weaponNumber = (weaponNumber + 1);
+            }
+           
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                weaponNumber = (weaponNumber - 1);
+            } 
+        }
+        */
     }
 }

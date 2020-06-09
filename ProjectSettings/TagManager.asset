@@ -8,6 +8,9 @@ TagManager:
   - Pared
   - suelo1
   - arbol1
+  - colliderLatigo
+  - startLash
+  - targetDelLatigo
   layers:
   - Default
   - TransparentFX

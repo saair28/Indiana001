@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Arma.cs" />
     <Compile Include="Assets\Scripts\CambioDeArma.cs" />
     <Compile Include="Assets\Scripts\CambioScene.cs" />
+    <Compile Include="Assets\Scripts\ColliderLash.cs" />
     <Compile Include="Assets\Scripts\Destruccion.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Healt_and_Damage.cs" />
