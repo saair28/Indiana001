@@ -23,7 +23,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     void LateUpdate()
     {
         CamControl();
-        //ViewObstructed();
+        ViewObstructed();
     }
     // Update is called once per frame
     void Update()
@@ -46,7 +46,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, Target.position - transform.position, out hit, 5.5f))
+        if(Physics.Raycast(transform.position, Target.position - transform.position, out hit, 4.5f))
         {
             if(hit.collider.gameObject.tag != "Player")
             {

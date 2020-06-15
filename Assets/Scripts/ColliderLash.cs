@@ -44,9 +44,9 @@ public class ColliderLash : MonoBehaviour
         //lash = player.GetComponent<Player>().lash;
         if (lash == true)
         {
-            if (Input.GetMouseButton(0) && Time.time > iniciateWhiplash)
+            if (Input.GetMouseButton(0)) //&& Time.time > iniciateWhiplash)
             {
-                iniciateWhiplash = Time.time + whiplashTime;
+                //iniciateWhiplash = Time.time + whiplashTime;
                 //timer2 += Time.deltaTime / 2;
                 //transform.position = Vector3.Lerp(ActualPosition, point1.transform.position, timer2);
                 transform.position = Vector3.Lerp(startLash.position, point1.position, timer2);

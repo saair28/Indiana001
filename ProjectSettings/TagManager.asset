@@ -11,6 +11,8 @@ TagManager:
   - colliderLatigo
   - startLash
   - targetDelLatigo
+  - Techo
+  - target
   layers:
   - Default
   - TransparentFX
