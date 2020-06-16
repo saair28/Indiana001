@@ -13,6 +13,9 @@ TagManager:
   - targetDelLatigo
   - Techo
   - target
+  - Escarabajo
+  - "Ara\xF1a"
+  - Bala
   layers:
   - Default
   - TransparentFX

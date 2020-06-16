@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class Destruccion : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Pared")
+        if (collision.gameObject.CompareTag("Araña"))
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Pared"))
+        {
+            Destroy(gameObject);
+        }
+
+        /*
+         if (collision.gameObject.CompareTag("Boss"))
+         {
+             Destroy(gameObject);
+         }
+
+         if (collision.gameObject.CompareTag("Ciempies"))
+         {
+             Destroy(gameObject);
+         }
+
+         if (collision.gameObject.CompareTag("EscarabajosNegros"))
+         {
+             Destroy(gameObject);
+         }
+         */
     }
 }
