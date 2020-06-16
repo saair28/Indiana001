@@ -1,75 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Threading;
 using UnityEngine;
 
 public class ColliderLash : MonoBehaviour
 {
-    public Transform point1;
-    public bool whiplash = false;
-    //public Vector3 ActualPosition;
-    //public Vector3 origin;
-    public Transform startLash;
-    //public float timer1;
-    public float timer2;
-    //public GameObject player;
-    public bool lash = true;
-    public float iniciateWhiplash;
-    public float whiplashTime;
-    public bool getPoint1 = false;
+    public Transform startMarker;
+    public Transform endMarker;
+
+    public float speed = 1.0f;
+    public float journeyLength = 1.0f;
+    private float startTime;
+    public bool loop = false;
+    public bool lashActivated = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.Find("Player");
-        timer2 = 0f;
+      
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Whiplash();
-        
-        //origin = transform.position;
-        //ActualPosition = transform.position;
-        timer2 += Time.deltaTime;
-
-    }
-
-    void Whiplash ()
-    {
-
-        //lash = player.GetComponent<Player>().lash;
-        if (lash == true)
+        if (lashActivated == true)
         {
-            if (Input.GetMouseButton(0)) //&& Time.time > iniciateWhiplash)
+            if (!loop)
             {
-                //iniciateWhiplash = Time.time + whiplashTime;
-                //timer2 += Time.deltaTime / 2;
-                //transform.position = Vector3.Lerp(ActualPosition, point1.transform.position, timer2);
-                transform.position = Vector3.Lerp(startLash.position, point1.position, timer2);
+                float distCovered = (Time.time - startTime) * speed;
+                transform.position = Vector3.Lerp(startMarker.position, endMarker.position, distCovered / journeyLength);
             }
-            /*
-            if (getPoint1 == true)
-            {
-                timer2 += Time.deltaTime / 2;
 
-                transform.position = Vector3.Lerp(ActualPosition, startLash.transform.position, timer2);
-            }
-            */
+            if (Input.GetMouseButton(0))
+                if (loop)
+                {
+                    float distCovered = Mathf.PingPong(Time.time - startTime, journeyLength / speed);
+                    transform.position = Vector3.Lerp(startMarker.position, endMarker.position, distCovered / journeyLength);
+                }
+
         }
-
         
- 
     }
-    public void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "targetDelLatigo")
-        {
-            //getPoint1 = true;
-            transform.position = Vector3.Lerp(point1.position, startLash.position, timer2);
-        }
-    }
+
+
+
+    
 }

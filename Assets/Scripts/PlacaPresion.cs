@@ -8,13 +8,14 @@ public class PlacaPresion : MonoBehaviour
 
     public GameObject door;
 
-    private void OnTriggerEnter(Collider coll)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!isclosed)
+        if (isclosed == false)
         {
-            isclosed = true;
+           isclosed = true;
 
-            door.transform.position -= new Vector3(0, 4.43f, 0);
+           door.transform.position -= new Vector3(0, 4.43f, 0);
         }
+     
     }
 }
