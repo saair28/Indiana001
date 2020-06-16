@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int ContadorDeEscarabajos;
+
     public float speed = 1f;
     public float rotationSpeed;
     public float rotX;
@@ -19,7 +21,10 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
-    public float weaponNumber; 
+    public float weaponNumber;
+    public bool restarEs = false;
+
+    public GameObject escarabajo;
 
     //private Camera mainCamera;
 
@@ -40,7 +45,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
-        
+
+        restarEs = escarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
+
         /*
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -57,6 +64,18 @@ public class Player : MonoBehaviour
         jump();
         ChangeWeapon();
 
+        if (restarEs == true)
+        {
+            restarEscarabajo();
+        }
+
+    }
+
+    void restarEscarabajo()
+    {
+        ContadorDeEscarabajos = ContadorDeEscarabajos - 15;
+
+        restarEs = false;
     }
 
     void PlayerMovement()
@@ -107,5 +126,13 @@ public class Player : MonoBehaviour
             } 
         }
         */
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Escarabajo"))
+        {
+            ContadorDeEscarabajos = ContadorDeEscarabajos + 1;
+        }
     }
 }

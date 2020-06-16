@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     public int health;
     public int numOfHearts;
+    public int vida;
 
     public RawImage[] hearts;
     public Texture fullHeart;
@@ -20,6 +21,8 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        vida = health;
+
         for (int i = 0; i < hearts.Length; i++)
         {
             if(health > numOfHearts)

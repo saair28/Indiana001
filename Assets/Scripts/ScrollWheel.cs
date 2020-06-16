@@ -42,7 +42,8 @@ public class ScrollWheel : MonoBehaviour
             }
         }
 
-       /* if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SeleccionadaArma = 0;
         }
@@ -66,18 +67,15 @@ public class ScrollWheel : MonoBehaviour
 
     void SeleccionArma()
     {
-        int i = 0;
+        //int i = 0;
 
-        foreach (Transform weapon in transform)
+        for (int i = 0; i < transform.childCount; i++)
         {
+            transform.GetChild(i).gameObject.SetActive(false);
+
             if (i == SeleccionadaArma)
             {
-                weapon.gameObject.SetActive(true);
-            }
-            else
-            {
-                weapon.gameObject.SetActive(false);
-                i++;
+                transform.GetChild(i).gameObject.SetActive(true);
             }
         }
     }

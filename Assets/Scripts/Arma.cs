@@ -18,8 +18,6 @@ public class Arma : MonoBehaviour
 
     public float tiempoDeDisparo;
 
-    public bool weapon = false;
-
     // Update is called once per frame
 
     void Start()
@@ -28,9 +26,6 @@ public class Arma : MonoBehaviour
     }
     void Update()
     {
-        //weapon = player.GetComponent<Player>().weapon;
-        if (weapon == true)
-        {    
             if (Input.GetMouseButtonDown(0) && Time.time > iniciarDisparo)
             {
 
@@ -40,7 +35,5 @@ public class Arma : MonoBehaviour
 
                 BalaPrefabInstanc.AddForce(Disparo.forward * 100 * VelDis);
             }
-        
-        }
     }
 }
