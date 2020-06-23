@@ -6,8 +6,9 @@ public class Player : MonoBehaviour
 {
     public int ContadorDeEscarabajos;
 
-    public float speed = 1f;
-    public float rotationSpeed;
+    public float speed = 0.5f;
+    Vector3 velocity; 
+    //public float rotationSpeed;
     public float rotX;
     public float rotY;
     public float rotZ;
@@ -40,10 +41,18 @@ public class Player : MonoBehaviour
         //CurrentWeapon = Weapons[0];
 
     }
-
+    /*
+    void RotatePlayer()
+    {
+        Vector3 vec = transform.eulerAngles;
+        vec.y += Input.GetAxis("Horizontal") * Time.deltaTime * 360;
+        transform.eulerAngles = vec;
+    }
+    */
     // Update is called once per frame
     void Update()
     {
+        //RotatePlayer();
         PlayerMovement();
 
         restarEs = escarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
@@ -80,11 +89,60 @@ public class Player : MonoBehaviour
 
     void PlayerMovement()
     {
+        velocity = Vector3.zero;
+        /*
         float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-        Vector3 playerMovement = new Vector3(h, 0f, v) * speed * Time.deltaTime;
+        Vector3 playerMovement = new Vector3(0F, 0f, v) * speed * Time.deltaTime;
         transform.Translate(playerMovement, Space.Self);
+        */
+        /*
+        if (Input.GetKey(KeyCode.W))
+        {
+            velocity.z = 2.0f;
+
+        } else if (Input.GetKey(KeyCode.S))
+        {
+            velocity.z = -2.0f; 
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            velocity.x = 2.0f;
+
+        } else if (Input.GetKey(KeyCode.A))
+        {
+            velocity.x = -2.0f;
+            transform.Rotate(0.0f, 45 * Time.deltaTime, 0.0f);
+        }
+        transform.Translate(velocity.normalized * Time.deltaTime * speed);
+        */
+        if (Input.GetKey(KeyCode.W))
+        {
+            //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
+            rb.velocity = transform.forward * speed;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
+            rb.velocity = -transform.forward * speed;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            //Rotate the sprite about the Y axis in the positive direction
+            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            //Rotate the sprite about the Y axis in the negative direction
+            transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
+        }
+
+
+
     }
 
     void jump()

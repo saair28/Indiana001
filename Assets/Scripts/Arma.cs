@@ -18,6 +18,8 @@ public class Arma : MonoBehaviour
 
     public float tiempoDeDisparo;
 
+    public float timer;
+
     // Update is called once per frame
 
     void Start()
@@ -26,10 +28,12 @@ public class Arma : MonoBehaviour
     }
     void Update()
     {
-            if (Input.GetMouseButtonDown(0) && Time.time > iniciarDisparo)
+        timer += Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(0) && timer > tiempoDeDisparo)
             {
 
-                iniciarDisparo = Time.time + tiempoDeDisparo;
+                timer = 0;
 
                 BalaPrefabInstanc = Instantiate(BalaPrefab, Disparo.position, Quaternion.identity) as Rigidbody;
 
