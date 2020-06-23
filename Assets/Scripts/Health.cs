@@ -72,5 +72,16 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(tiempo_frenado);
         GetComponent<Player>().speed = velocidadActual;
     }
+    public void CurarVida(int cantidad)
+    {
+        if (!invencible && health > 0 && health <= 5)
+        {
+            health += cantidad;
+
+            StartCoroutine(Invulnerable());
+
+            //StartCoroutine(FrenarVelocidad());
+        }
+    }
 
 }

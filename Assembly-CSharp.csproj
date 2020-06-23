@@ -62,17 +62,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AnotherScene.cs" />
     <Compile Include="Assets\Scripts\ArañaE.cs" />
     <Compile Include="Assets\Scripts\Arma.cs" />
     <Compile Include="Assets\Scripts\CambioDeArma.cs" />
     <Compile Include="Assets\Scripts\CambioScene.cs" />
+    <Compile Include="Assets\Scripts\CameraCollision.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CentroDeAtaque.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\Cofre.cs" />
     <Compile Include="Assets\Scripts\ColliderLash.cs" />
     <Compile Include="Assets\Scripts\Destruccion.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Escarabajo.cs" />
+    <Compile Include="Assets\Scripts\Heal.cs" />
     <Compile Include="Assets\Scripts\Healt_and_Damage.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Health_and_Damage.cs" />
