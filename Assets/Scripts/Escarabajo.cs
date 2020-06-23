@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Escarabajo : MonoBehaviour
 {
-    public int contador = 0;
-
-    public GameObject escarabajo;
 
     private void OnCollisionEnter(Collision collision)
     {

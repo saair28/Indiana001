@@ -80,6 +80,8 @@ MonoBehaviour:
   Player: {fileID: 6872575990037008067}
   restarEscara: 0
   curar: 0
+  Could: 1
+  CuentaAtras: 1
 --- !u!1 &3186190542708193248
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,10 +408,16 @@ MonoBehaviour:
   timer: 4
   CuentaAtras: 2
   isJump: 0
+  Lento: 0
   jumpForce: 5
   weaponNumber: 0
   restarEs: 0
-  escarabajo: {fileID: 1250408471866320127}
+  ObjetoEscarabajo: {fileID: 1250408471866320127}
+  "telara\xF1a": {fileID: 3158504504825089901, guid: 8fb2d305ad3e32c4cb76ea5ea583d258,
+    type: 3}
+  Suma: 0
+  escarabajo: {fileID: 6027073952195113908, guid: a9e98ea7a78a165458da6ba85b946e5d,
+    type: 3}
   Could: 1
 --- !u!54 &6872575990037008065
 Rigidbody:

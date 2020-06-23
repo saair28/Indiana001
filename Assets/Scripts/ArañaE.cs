@@ -13,6 +13,9 @@ public class ArañaE : MonoBehaviour
     public GameObject player;
 
     Vector3 initialPosition;
+
+    public float dist;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,15 @@ public class ArañaE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         Vector3 target = initialPosition;
 
-        float dist = Vector3.Distance(player.transform.position, transform.position);
+        dist = Vector3.Distance(player.transform.position, transform.position);
 
         if (dist < VisionRad) target = player.transform.position;
 
@@ -47,16 +56,16 @@ public class ArañaE : MonoBehaviour
         if (collision.gameObject.CompareTag("Bala"))
         {
             vida = vida - 1;
-
-            if (vida <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
             player.GetComponent<Health>().RestarVida(ataq);
+        }
+
+        if (collision.gameObject.CompareTag("Araña"))
+        {
+
         }
     }
 }

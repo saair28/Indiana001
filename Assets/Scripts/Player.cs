@@ -18,17 +18,22 @@ public class Player : MonoBehaviour
     public float CuentaAtras = 1f;
 
     public bool isJump = false;
+    public bool Lento;
 
     public float jumpForce = 5.0f;
 
     public float weaponNumber;
     public bool restarEs = false;
 
-    public GameObject escarabajo;
+    public GameObject ObjetoEscarabajo;
+
+    public GameObject telaraña;
 
     //private Camera mainCamera;
 
     public int Could = 1;
+
+    public bool abrir = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +51,9 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
 
-        restarEs = escarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
+        restarEs = ObjetoEscarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
+
+        Lento = telaraña.GetComponent<Telaraña>().lento;
 
         /*
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -69,6 +76,14 @@ public class Player : MonoBehaviour
             restarEscarabajo();
         }
 
+        if (Lento == true)
+        {
+            speed = 15f;
+        }
+        else
+        {
+            speed = 30f;
+        }
     }
 
     void restarEscarabajo()
@@ -110,7 +125,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     void ChangeWeapon()
     {/*
         if (Input.GetAxis("Mouse ScrollWheel")) { }
@@ -132,7 +146,16 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Escarabajo"))
         {
-            ContadorDeEscarabajos = ContadorDeEscarabajos + 1;
+            ContadorDeEscarabajos += 1;
+        }
+
+        if (collision.gameObject.CompareTag("Cofre"))
+        {
+            abrir = true;
+        }
+        else
+        {
+            abrir = false;
         }
     }
 }

@@ -32,8 +32,6 @@ public class Spawn : MonoBehaviour
         if (Cerca == true)
         {
             InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
-
-            Detener += 1; 
         }
 
         Vector3 target = initialPosition;
@@ -42,9 +40,14 @@ public class Spawn : MonoBehaviour
 
         if (dist < VisionRad) target = player.transform.position;
 
-        if (dist >= 0f)
+        if (dist <= VisionRad)
         {
             Cerca = true;
+        }
+
+        if (Detener == Fin)
+        {
+            CancelInvoke("SpawnObject");
         }
 
         Debug.DrawLine(transform.position, target, Color.red);
@@ -60,9 +63,7 @@ public class Spawn : MonoBehaviour
     public void SpawnObject()
     {
         Instantiate(spawnee, transform.position, transform.rotation);
-        if (Detener == Fin)
-        {
-            CancelInvoke("SpawnObject");
-        }
+
+        Detener += 1;
     }
 }
