@@ -6,6 +6,12 @@ public class PlacaPresion : MonoBehaviour
 {
     bool isclosed = false;
 
+    public float x;
+
+    public float y;
+
+    public float z;
+
     public GameObject door;
 
     private void OnTriggerEnter(Collider other)
@@ -14,8 +20,10 @@ public class PlacaPresion : MonoBehaviour
         {
            isclosed = true;
 
-           door.transform.position -= new Vector3(0, 4.43f, 0);
+            door.transform.position -= new Vector3(x, y, z);
         }
      
     }
 }
+
+//0, 4.43f, 0
