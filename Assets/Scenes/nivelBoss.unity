@@ -311,7 +311,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1472916963
 MonoBehaviour:
@@ -326,12 +326,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  length: 0
+  - {fileID: 957457649738273639, guid: 31c1fcc8b42a30342b4a455a9837cf21, type: 3}
+  - {fileID: 5754747145328279549, guid: c35154237312e5946a889ac1ec8e8fe9, type: 3}
+  - {fileID: 5754747145328279549, guid: c35154237312e5946a889ac1ec8e8fe9, type: 3}
+  - {fileID: 5754747145328279549, guid: c35154237312e5946a889ac1ec8e8fe9, type: 3}
+  - {fileID: 5754747145328279549, guid: c35154237312e5946a889ac1ec8e8fe9, type: 3}
+  length: 5
 --- !u!4 &1472916964
 Transform:
   m_ObjectHideFlags: 0

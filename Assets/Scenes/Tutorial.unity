@@ -1104,6 +1104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc41b132c48cf44fb68afd5f281d468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  z: 0
   door: {fileID: 1224870684}
 --- !u!65 &275408692
 BoxCollider:
@@ -2537,6 +2540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc41b132c48cf44fb68afd5f281d468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  z: 0
   door: {fileID: 1224870684}
 --- !u!1 &1287074147
 GameObject:

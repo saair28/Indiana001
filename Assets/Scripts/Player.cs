@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public int ContadorDeEscarabajos;
 
-    public float speed = 0.5f;
+    public float speed = 1f;
     Vector3 velocity; 
     //public float rotationSpeed;
     public float rotX;
@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
 
         if (Lento == true)
         {
-            speed = 15f;
+            speed = 0.5f;
         }
         else
         {
-            speed = 30f;
+            speed = 1f;
         }
     }
 
@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             //Rotate the sprite about the Y axis in the positive direction
-            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
+            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * speed * 5);
         }
 
         if (Input.GetKey(KeyCode.A))

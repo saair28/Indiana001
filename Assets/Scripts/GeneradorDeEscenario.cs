@@ -8,7 +8,7 @@ public class GeneradorDeEscenario : MonoBehaviour
     public int length;
 
     public int[,] map = new int[5, 5] {
-        {0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0},
@@ -36,8 +36,8 @@ public class GeneradorDeEscenario : MonoBehaviour
         {
             for (int row = 0; row < map.GetLength(0); row++)
             {
-                GameObject clone = Instantiate(tiles[0], transform.position, transform.rotation);
-                clone.transform.position += new Vector3((row * 5), 0, (-col * 5));
+                GameObject clone = Instantiate(tiles[map[row,col]], transform.position, transform.rotation);
+                clone.transform.position += new Vector3((row * 1), 0, (-col * 1));
             }
         }
     }
