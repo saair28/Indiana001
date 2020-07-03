@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
 
         if (Lento == true)
         {
-            speed = 0.5f;
+            speed = 5f;
         }
         else
         {
-            speed = 1f;
+            speed = 10f;
         }
     }
 
@@ -105,57 +105,12 @@ public class Player : MonoBehaviour
     void PlayerMovement()
     {
         velocity = Vector3.zero;
-        /*
-        float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        Vector3 playerMovement = new Vector3(0F, 0f, v) * speed * Time.deltaTime;
+        Vector3 playerMovement = new Vector3(h, 0f, v) * speed * Time.deltaTime;
         transform.Translate(playerMovement, Space.Self);
-        */
-        /*
-        if (Input.GetKey(KeyCode.W))
-        {
-            velocity.z = 2.0f;
-
-        } else if (Input.GetKey(KeyCode.S))
-        {
-            velocity.z = -2.0f; 
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            velocity.x = 2.0f;
-
-        } else if (Input.GetKey(KeyCode.A))
-        {
-            velocity.x = -2.0f;
-            transform.Rotate(0.0f, 45 * Time.deltaTime, 0.0f);
-        }
-        transform.Translate(velocity.normalized * Time.deltaTime * speed);
-        */
-        if (Input.GetKey(KeyCode.W))
-        {
-            //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
-            rb.velocity = transform.forward * speed;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
-            rb.velocity = -transform.forward * speed;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            //Rotate the sprite about the Y axis in the positive direction
-            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * speed * 5);
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            //Rotate the sprite about the Y axis in the negative direction
-            transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
-        }
-
+       
 
 
     }
