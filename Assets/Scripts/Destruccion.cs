@@ -28,7 +28,7 @@ public class Destruccion : MonoBehaviour
              Destroy(gameObject);
          }
 
-         if (collision.gameObject.CompareTag("EscarabajosNegros"))
+         if (collision.gameObject.CompareTag("EscarabajosN"))
          {
              Destroy(gameObject);
          }

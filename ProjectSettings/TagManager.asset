@@ -17,6 +17,8 @@ TagManager:
   - "Ara\xF1a"
   - Bala
   - Cofre
+  - Municion
+  - EscarabajosN
   layers:
   - Default
   - TransparentFX

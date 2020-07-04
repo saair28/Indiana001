@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject spawnee;
+    public ArañaE spawnee;
     public bool stopSpawnig = false;
     public float spawnTime;
     public float spawnDelay;
 
     public float VisionRad;
 
-    public GameObject player;
+    public Player player;
 
     Vector3 initialPosition;
 
@@ -29,6 +29,8 @@ public class Spawn : MonoBehaviour
 
     private void Update()
     {
+        player = Player.instance;
+
         if (Cerca == true)
         {
             InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
@@ -45,7 +47,7 @@ public class Spawn : MonoBehaviour
             Cerca = true;
         }
 
-        if (Detener == Fin)
+        if (Detener == 3)
         {
             CancelInvoke("SpawnObject");
         }

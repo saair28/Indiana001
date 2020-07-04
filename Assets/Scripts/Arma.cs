@@ -8,7 +8,7 @@ public class Arma : MonoBehaviour
 
     public Transform Disparo;
 
-    public GameObject player;
+    public Player player;
 
     public float VelDis;
 
@@ -18,6 +18,10 @@ public class Arma : MonoBehaviour
 
     public float tiempoDeDisparo;
 
+    public int municion;
+
+    public bool restarMuni = false;
+
     // Update is called once per frame
 
     void Start()
@@ -26,14 +30,25 @@ public class Arma : MonoBehaviour
     }
     void Update()
     {
-            if (Input.GetMouseButtonDown(0) && Time.time > iniciarDisparo)
-            {
+        player = Player.instance;
 
-                iniciarDisparo = Time.time + tiempoDeDisparo;
+        municion = player.GetComponent<Player>().municion;
 
-                BalaPrefabInstanc = Instantiate(BalaPrefab, Disparo.position, Quaternion.identity) as Rigidbody;
+        if (Input.GetMouseButtonDown(0) && Time.time > iniciarDisparo && municion > 0)
+        {
 
-                BalaPrefabInstanc.AddForce(Disparo.forward * 100 * VelDis);
-            }
+            iniciarDisparo = Time.time + tiempoDeDisparo;
+
+            BalaPrefabInstanc = Instantiate(BalaPrefab, Disparo.position, Quaternion.identity) as Rigidbody;
+
+            BalaPrefabInstanc.AddForce(Disparo.forward * 100 * VelDis);
+
+            restarMuni = true;
+        }
+
+        else
+        {
+            restarMuni = false;
+        }
     }
 }
