@@ -9,9 +9,9 @@ public class Health : MonoBehaviour
     public int numOfHearts;
     public int vida;
 
-    public RawImage[] hearts;
-    public Texture fullHeart;
-    public Texture emptyHeart;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     public bool invencible = false;
 
@@ -31,10 +31,10 @@ public class Health : MonoBehaviour
             }
             if(i < health)
             {
-                hearts[i].texture = fullHeart;
+                hearts[i].sprite = fullHeart;
             } else
             {
-                hearts[i].texture = emptyHeart;
+                hearts[i].sprite = emptyHeart;
             }
 
             if (i < numOfHearts)

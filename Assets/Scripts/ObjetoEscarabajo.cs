@@ -36,6 +36,8 @@ public class ObjetoEscarabajo : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && Contador >= 15)
         {
             curar = true;
+            Player.GetComponent<Health>().CurarVida(1);
+
 
             restarEscara = true;
         }

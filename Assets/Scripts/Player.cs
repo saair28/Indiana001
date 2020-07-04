@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public static Player instance;
 
     public float speed = 1f;
-    public float rotationSpeed;
+    Vector3 velocity; 
+    //public float rotationSpeed;
     public float rotX;
     public float rotY;
     public float rotZ;
@@ -56,10 +57,18 @@ public class Player : MonoBehaviour
         //CurrentWeapon = Weapons[0];
 
     }
-
+    /*
+    void RotatePlayer()
+    {
+        Vector3 vec = transform.eulerAngles;
+        vec.y += Input.GetAxis("Horizontal") * Time.deltaTime * 360;
+        transform.eulerAngles = vec;
+    }
+    */
     // Update is called once per frame
     void Update()
     {
+        //RotatePlayer();
         PlayerMovement();
 
         restarEs = ObjetoEscarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
@@ -91,11 +100,11 @@ public class Player : MonoBehaviour
 
         if (Lento == true)
         {
-            speed = 15f;
+            speed = 5f;
         }
         else
         {
-            speed = 30f;
+            speed = 10f;
         }
 
         if (restarMuni == true)
@@ -117,12 +126,16 @@ public class Player : MonoBehaviour
 
     void PlayerMovement()
     {
-        float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        velocity = Vector3.zero;
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
         Vector3 playerMovement = new Vector3(h, 0f, v) * speed * Time.deltaTime;
 
         rb.MovePosition (playerMovement + transform.position);
+
+        transform.Translate(playerMovement, Space.Self);
+
     }
 
     void jump()

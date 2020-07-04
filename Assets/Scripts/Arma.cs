@@ -22,6 +22,8 @@ public class Arma : MonoBehaviour
 
     public bool restarMuni = false;
 
+    public float timer;
+
     // Update is called once per frame
 
     void Start()
@@ -42,6 +44,13 @@ public class Arma : MonoBehaviour
             BalaPrefabInstanc = Instantiate(BalaPrefab, Disparo.position, Quaternion.identity) as Rigidbody;
 
             BalaPrefabInstanc.AddForce(Disparo.forward * 100 * VelDis);
+
+        timer += Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(0) && timer > tiempoDeDisparo)
+            {
+
+                timer = 0;
 
             restarMuni = true;
         }

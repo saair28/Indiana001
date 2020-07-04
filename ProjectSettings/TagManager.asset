@@ -17,8 +17,9 @@ TagManager:
   - "Ara\xF1a"
   - Bala
   - Cofre
-  - Municion
-  - EscarabajosN
+  - ataqueRegresa
+  - ataqueRegresa2
+>>>>>>> 308883ae1fc9fae72a20ca9d0c8bcb2d87077685
   layers:
   - Default
   - TransparentFX
