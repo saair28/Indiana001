@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ArañaE.cs" />
     <Compile Include="Assets\Scripts\Arma.cs" />
     <Compile Include="Assets\Scripts\BOSS.cs" />
+>>>>>>> 308883ae1fc9fae72a20ca9d0c8bcb2d87077685
     <Compile Include="Assets\Scripts\CambioDeArma.cs" />
     <Compile Include="Assets\Scripts\CambioScene.cs" />
     <Compile Include="Assets\Scripts\CameraCollision.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\ColliderLash.cs" />
     <Compile Include="Assets\Scripts\Destruccion.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyEscara.cs" />
     <Compile Include="Assets\Scripts\Escarabajo.cs" />
     <Compile Include="Assets\Scripts\GeneradorDeEscenario.cs" />
     <Compile Include="Assets\Scripts\Heal.cs" />

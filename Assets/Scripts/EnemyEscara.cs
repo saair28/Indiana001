@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArañaE : MonoBehaviour
+public class EnemyEscara : MonoBehaviour
 {
-    public static ArañaE instance;
+    public static EnemyEscara instance;
 
     public int vida = 10;
     public float velo = 10f;
@@ -51,7 +51,7 @@ public class ArañaE : MonoBehaviour
 
         rb.MovePosition(Vector3.MoveTowards(transform.position, target, fixedSpeed));
 
-        Debug.DrawLine(transform.position, target, Color.red);   
+        Debug.DrawLine(transform.position, target, Color.red);
     }
 
     private void OnDrawGizmos()

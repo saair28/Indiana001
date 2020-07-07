@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public int ContadorDeEscarabajos;
 
+    public static Player instance;
+
     public float speed = 1f;
     Vector3 velocity; 
     //public float rotationSpeed;
@@ -30,16 +32,25 @@ public class Player : MonoBehaviour
 
     public GameObject telaraña;
 
+    public GameObject arma;
+
     //private Camera mainCamera;
 
     public int Could = 1;
 
     public bool abrir = false;
 
+    public int municion;
+
+    public bool restarMuni;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        instance = this;
+
         /*
         mainCamera = FindObjectOfType<Camera>();
         */
@@ -63,6 +74,8 @@ public class Player : MonoBehaviour
         restarEs = ObjetoEscarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
 
         Lento = telaraña.GetComponent<Telaraña>().lento;
+
+        restarMuni = arma.GetComponent<Arma>().restarMuni;
 
         /*
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -93,6 +106,15 @@ public class Player : MonoBehaviour
         {
             speed = 10f;
         }
+
+        if (restarMuni == true)
+        {
+            municion = municion - 1;
+        }
+        else
+        {
+
+        }
     }
 
     void restarEscarabajo()
@@ -109,9 +131,10 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         Vector3 playerMovement = new Vector3(h, 0f, v) * speed * Time.deltaTime;
-        transform.Translate(playerMovement, Space.Self);
-       
 
+        rb.MovePosition (playerMovement + transform.position);
+
+        transform.Translate(playerMovement, Space.Self);
 
     }
 
@@ -169,6 +192,11 @@ public class Player : MonoBehaviour
         else
         {
             abrir = false;
+        }
+
+        if (collision.gameObject.CompareTag("Municion"))
+        {
+            municion += 1;
         }
     }
 }

@@ -37,8 +37,10 @@ public class Cofre : MonoBehaviour
         {
             CalcularDropeo();
         }
+
         else
         {
+
         }
 
     }
