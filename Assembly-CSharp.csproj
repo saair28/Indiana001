@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ArañaE.cs" />
     <Compile Include="Assets\Scripts\Arma.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\BotonesMenu\ButtonStart.cs" />
     <Compile Include="Assets\Scripts\CambioDeArma.cs" />
     <Compile Include="Assets\Scripts\CambioScene.cs" />
     <Compile Include="Assets\Scripts\CameraCollision.cs" />
