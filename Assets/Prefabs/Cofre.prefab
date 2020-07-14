@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2594318421935253675}
-  - component: {fileID: 2594318421935253674}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -25,36 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2594318421935253672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.45}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2594318423050208463}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2594318421935253674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2594318421935253672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80930ede609b4b0498a089d017c99b62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootTable:
-  - name: Escarabajo
-    objeto: {fileID: 6027073952195113908, guid: a9e98ea7a78a165458da6ba85b946e5d,
-      type: 3}
-    probabilidad: 50
-  - name: Enemigo
-    objeto: {fileID: 0}
-    probabilidad: 30
-  dropChance: 50
-  dropea: 0
-  Cumplirfuncion: 1
-  player: {fileID: 0}
 --- !u!1 &2594318423050208459
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +42,7 @@ GameObject:
   - component: {fileID: 2594318423050208460}
   - component: {fileID: 2594318423050208461}
   - component: {fileID: 2594318423050208458}
+  - component: {fileID: 2344576691494397567}
   m_Layer: 0
   m_Name: Cofre
   m_TagString: Cofre
@@ -149,3 +125,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2344576691494397567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594318423050208459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80930ede609b4b0498a089d017c99b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootTable:
+  - name: escarabajo
+    objeto: {fileID: 6027073952195113908, guid: a9e98ea7a78a165458da6ba85b946e5d,
+      type: 3}
+    probabilidad: 60
+  - name: "ara\xF1a"
+    objeto: {fileID: 94449733794690584, guid: ca4a58d72e11bc047a3bf995b1b83e3b, type: 3}
+    probabilidad: 40
+  dropChance: 80
+  dropea: 0
+  Cumplirfuncion: 1
+  player: {fileID: 0}
+  destruir: 0
+  bala: 0
+  objeto: {fileID: 2594318421935253672}
+  Spawneo: 0

@@ -6,16 +6,80 @@ public class ScrollWheel : MonoBehaviour
 {
     public int SeleccionadaArma = 0;
 
+    public GameObject Arma;
 
-   // Start is called before the first frame update
+    public GameObject Escarabajo;
+
+    public GameObject Mano;
+
+    public GameObject Latigo;
+
+    public GameObject ContarEs;
+
+    public GameObject ContarBa;
+
+    public static ScrollWheel instance;
+
+    public bool manos = false;
+
+    // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         SeleccionArma();
+        Arma.SetActive(false);
+        Mano.SetActive(false);
+        Escarabajo.SetActive(false);
+        Latigo.SetActive(false);
+        ContarBa.SetActive(false);
+        ContarEs.SetActive(false);
+        manos = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SeleccionadaArma == 0)
+        {
+            Arma.SetActive(true);
+            Latigo.SetActive(false);
+            Escarabajo.SetActive(false);
+            ContarBa.SetActive(true);
+            ContarEs.SetActive(false);
+            Mano.SetActive(false);
+            manos = false;
+        }
+        if (SeleccionadaArma == 1)
+        {
+            Latigo.SetActive(true);
+            Arma.SetActive(false);
+            Escarabajo.SetActive(false);
+            ContarBa.SetActive(false);
+            ContarEs.SetActive(false);
+            Mano.SetActive(false);
+            manos = false;
+        }
+        if (SeleccionadaArma == 2)
+        {
+            Escarabajo.SetActive(true);
+            Latigo.SetActive(false);
+            Arma.SetActive(false);
+            ContarEs.SetActive(true);
+            ContarBa.SetActive(false);
+            Mano.SetActive(false);
+            manos = false;
+        }
+        if (SeleccionadaArma == 3)
+        {
+            Arma.SetActive(false);
+            Mano.SetActive(true);
+            Escarabajo.SetActive(false);
+            Latigo.SetActive(false);
+            ContarBa.SetActive(false);
+            ContarEs.SetActive(false);
+            manos = true;
+        }
 
         int previusSeleccionadaArma = SeleccionadaArma;    
 

@@ -30,9 +30,11 @@ public class Player : MonoBehaviour
 
     public GameObject ObjetoEscarabajo;
 
-    public GameObject telaraña;
+    public Telaraña telaraña;
 
     public GameObject arma;
+
+    public ScrollWheel main;
 
     //private Camera mainCamera;
 
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
     public int municion;
 
     public bool restarMuni;
+
+    public bool manos;
 
     // Start is called before the first frame update
     void Start()
@@ -68,8 +72,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        telaraña = Telaraña.instance;
+
+        main = ScrollWheel.instance;
+
         //RotatePlayer();
         PlayerMovement();
+
+        manos = main.GetComponent<ScrollWheel>().manos;
 
         restarEs = ObjetoEscarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
 
@@ -91,7 +101,6 @@ public class Player : MonoBehaviour
         */
 
         jump();
-        ChangeWeapon();
 
         if (restarEs == true)
         {
@@ -161,22 +170,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void ChangeWeapon()
-    {/*
-        if (Input.GetAxis("Mouse ScrollWheel")) { }
-        {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            {
-                weaponNumber = (weaponNumber + 1);
-            }
-           
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            {
-                weaponNumber = (weaponNumber - 1);
-            } 
-        }
-        */
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -185,9 +178,12 @@ public class Player : MonoBehaviour
             ContadorDeEscarabajos += 1;
         }
 
-        if (collision.gameObject.CompareTag("Cofre"))
+        if (manos == true)
         {
-            abrir = true;
+            if (collision.gameObject.CompareTag("Cofre"))
+            {
+                abrir = true;
+            }
         }
         else
         {
@@ -197,6 +193,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Municion"))
         {
             municion += 1;
+        }
+
+        if (collision.gameObject.CompareTag("Cienpies"))
+        {
+           GetComponent<Health>().RestarVida(3);
         }
     }
 }

@@ -20,7 +20,15 @@ public class Cofre : MonoBehaviour
 
     public bool Cumplirfuncion = true;
 
-    public GameObject player;
+    public Player player;
+
+    public bool destruir = false;
+
+    public bool bala;
+
+    public GameObject objeto;
+
+    public bool Spawneo = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,18 +39,25 @@ public class Cofre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = Player.instance;
+
         dropea = player.GetComponent<Player>().abrir;
 
-        if (dropea == true && Cumplirfuncion == true)
+        if (dropea == true && Cumplirfuncion == true && Spawneo == true)
+        {
+           CalcularDropeo();
+        }
+        else
+        {}
+
+        if (destruir == true && Cumplirfuncion == true)
         {
             CalcularDropeo();
-        }
 
+            Destroy(gameObject);
+        }
         else
-        {
-
-        }
-
+        {}
     }
 
     public void CalcularDropeo()
@@ -71,11 +86,27 @@ public class Cofre : MonoBehaviour
             {
                 if (RandomValue <= LootTable[j].probabilidad)
                 {
-                    Instantiate(LootTable[j].objeto, transform.position, Quaternion.identity);
+                    Instantiate(LootTable[j].objeto, objeto.transform.position, Quaternion.identity);
                 }
             }
 
             Cumplirfuncion = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (bala == true)
+        {
+            if (collision.gameObject.CompareTag("Bala"))
+            {
+                destruir = true;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Spawneo = true;
         }
     }
 }
