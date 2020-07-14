@@ -12,6 +12,10 @@ public class ColliderLash : MonoBehaviour
     private float startTime;
     public bool loop = false;
     public bool lashActivated = false;
+<<<<<<< HEAD
+=======
+    public GameObject ArañaE;
+>>>>>>> 85608a254ca7af437019b320dbee05cd63f89e81
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +46,20 @@ public class ColliderLash : MonoBehaviour
         
     }
 
+<<<<<<< HEAD
 
 
     
+=======
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag ("Araña"))
+        {
+            ArañaE.GetComponent<ArañaE>().vida = ArañaE.GetComponent<ArañaE>().vida  - 2;
+        }
+    }
+
+
+
+>>>>>>> 85608a254ca7af437019b320dbee05cd63f89e81
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GeneradorDeEscenario : MonoBehaviour
 {
     public GameObject[] tiles;
+<<<<<<< HEAD
     //public int length;
 
     public int[,] map = new int[22, 21]
@@ -31,6 +32,16 @@ public class GeneradorDeEscenario : MonoBehaviour
         {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+=======
+    public int length;
+
+    public int[,] map = new int[5, 5] {
+        {1, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+>>>>>>> 85608a254ca7af437019b320dbee05cd63f89e81
     };
     
 
@@ -55,7 +66,11 @@ public class GeneradorDeEscenario : MonoBehaviour
             for (int row = 0; row < map.GetLength(0); row++)
             {
                 GameObject clone = Instantiate(tiles[map[row,col]], transform.position, transform.rotation);
+<<<<<<< HEAD
                 clone.transform.position += new Vector3((row * 3), 0, (-col * 3));
+=======
+                clone.transform.position += new Vector3((row * 1), 0, (-col * 1));
+>>>>>>> 85608a254ca7af437019b320dbee05cd63f89e81
             }
         }
     }
