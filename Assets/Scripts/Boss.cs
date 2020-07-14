@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BOSS : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     public int vida = 10;
     public float velo = 20f;
