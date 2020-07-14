@@ -4,15 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pared
+  - ataqueRegresa2
+  - ataqueRegresa
   - Bala
-  - Municion
-  - Escarabajo
-  - Cofre
-  - CienPies
-  - "Ara\xF1a"
-  - EscarabajosN
-  - manos
+  - Pared
+  - targetDelLatigo
+  - colliderLatigo
+  - startLash
+  - Techo
+  - target
+  - PisoFalso
+>>>>>>> aba50b6bbc7cca3580e5be34a16854dd6084f2ca
   layers:
   - Default
   - TransparentFX

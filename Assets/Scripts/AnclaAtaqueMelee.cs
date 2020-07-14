@@ -16,7 +16,7 @@ public class AnclaAtaqueMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BossScript.GetComponent<BOSS>().ataqueOn == true)
+        if (BossScript.GetComponent<Boss>().ataqueOn == true)
         { 
             if (ColliderAtaqueScript.GetComponent<ColliderAtaqueMelee>().ataqueRegresa == false) //&& Tope.GetComponent<Tope>().TopeOn == false)
             {
@@ -30,7 +30,7 @@ public class AnclaAtaqueMelee : MonoBehaviour
             }
 
         }
-        else if (BossScript.GetComponent<BOSS>().ataqueOn == false)
+        else if (BossScript.GetComponent<Boss>().ataqueOn == false)
         {
             transform.Rotate(new Vector3(0f, 0f, 0f));
         }

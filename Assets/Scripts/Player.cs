@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public bool isJump = false;
     public bool Lento;
 
-    public float jumpForce = 5.0f;
+    public float jumpForce = 2.5f;
 
     public float weaponNumber;
     public bool restarEs = false;

@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
             } else
             {
                 hearts[i].sprite = emptyHeart;
+                //hearts[i].gameObject.SetActive(false);
             }
 
             if (i < numOfHearts)

@@ -62,12 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AccionadorTrampaTronco.cs" />
     <Compile Include="Assets\Scripts\AnclaAtaqueMelee.cs" />
     <Compile Include="Assets\Scripts\AnotherScene.cs" />
     <Compile Include="Assets\Scripts\ArañaE.cs" />
     <Compile Include="Assets\Scripts\Arma.cs" />
-    <Compile Include="Assets\Scripts\BOSS.cs" />
+    <Compile Include="Assets\Scripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\CambioDeArma.cs" />
+>>>>>>> aba50b6bbc7cca3580e5be34a16854dd6084f2ca
     <Compile Include="Assets\Scripts\CambioScene.cs" />
     <Compile Include="Assets\Scripts\CameraCollision.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -76,7 +77,6 @@
     <Compile Include="Assets\Scripts\CienPies.cs" />
     <Compile Include="Assets\Scripts\Cofre.cs" />
     <Compile Include="Assets\Scripts\ColliderAtaqueMelee.cs" />
-    <Compile Include="Assets\Scripts\ColliderLash.cs" />
     <Compile Include="Assets\Scripts\Destruccion.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyEscara.cs" />
@@ -96,12 +96,18 @@
     <Compile Include="Assets\Scripts\PlayerControlle.cs" />
     <Compile Include="Assets\Scripts\Pulsar.cs" />
     <Compile Include="Assets\Scripts\ScrollWheel.cs" />
+    <Compile Include="Assets\Scripts\Slash\ColliderLash.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Telaraña.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonCameraController.cs" />
     <Compile Include="Assets\Scripts\TopDownCam.cs" />
-    <Compile Include="Assets\Scripts\Tope.cs" />
-    <Compile Include="Assets\Scripts\TrampaTronco.cs" />
+    <Compile Include="Assets\Scripts\TrampaPisoFalso\AccionadorPisoFalso.cs" />
+    <Compile Include="Assets\Scripts\TrampaPisoFalso\AnclaDeParte1.cs" />
+    <Compile Include="Assets\Scripts\TrampaPisoFalso\AnclaDeParte2.cs" />
+    <Compile Include="Assets\Scripts\TrampaPisoFalso\TopeTrampaPisoFalso.cs" />
+    <Compile Include="Assets\Scripts\TrampaTroco\AccionadorTrampaTronco.cs" />
+    <Compile Include="Assets\Scripts\TrampaTroco\Tope.cs" />
+    <Compile Include="Assets\Scripts\TrampaTroco\TrampaTronco.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

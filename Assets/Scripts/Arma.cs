@@ -54,11 +54,12 @@ public class Arma : MonoBehaviour
 
                 restarMuni = true;
             }
-        }
 
-        else
-        {
-            restarMuni = false;
+            else
+            {
+                restarMuni = false;
+            }
         }
     }
 }
+
