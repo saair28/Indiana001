@@ -123,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b123e670d0aff6428fdfe36d023c770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 10
-  velo: 10
-  ataq: 2
-  VisionRad: 0
+  vida: 15
+  velo: 20
+  ataq: 1
+  VisionRad: 20
   player: {fileID: 0}
   dist: 0

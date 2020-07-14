@@ -30,9 +30,11 @@ public class Player : MonoBehaviour
 
     public GameObject ObjetoEscarabajo;
 
-    public GameObject telaraña;
+    public Telaraña telaraña;
 
     public GameObject arma;
+
+    public ScrollWheel main;
 
     //private Camera mainCamera;
 
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
     public int municion;
 
     public bool restarMuni;
+
+    public bool manos;
 
     // Start is called before the first frame update
     void Start()
@@ -68,8 +72,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        telaraña = Telaraña.instance;
+
+        main = ScrollWheel.instance;
+
         //RotatePlayer();
         PlayerMovement();
+
+        manos = main.GetComponent<ScrollWheel>().manos;
 
         restarEs = ObjetoEscarabajo.GetComponent<ObjetoEscarabajo>().restarEscara;
 
@@ -184,10 +194,12 @@ public class Player : MonoBehaviour
         {
             ContadorDeEscarabajos += 1;
         }
-
-        if (collision.gameObject.CompareTag("Cofre"))
+        if (manos == true)
         {
-            abrir = true;
+            if (collision.gameObject.CompareTag("Cofre"))
+            {
+                abrir = true;
+            }
         }
         else
         {

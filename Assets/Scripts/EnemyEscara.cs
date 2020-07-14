@@ -8,7 +8,7 @@ public class EnemyEscara : MonoBehaviour
 
     public int vida = 10;
     public float velo = 10f;
-    public int ataq = 2;
+    public int ataq = 1;
 
     public float VisionRad;
 

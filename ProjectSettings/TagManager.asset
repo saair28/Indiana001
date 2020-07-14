@@ -4,22 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerInteracion
   - Pared
-  - suelo1
-  - arbol1
-  - colliderLatigo
-  - startLash
-  - targetDelLatigo
-  - Techo
-  - target
-  - Escarabajo
-  - "Ara\xF1a"
   - Bala
+  - Municion
+  - Escarabajo
   - Cofre
-  - ataqueRegresa
-  - ataqueRegresa2
->>>>>>> 308883ae1fc9fae72a20ca9d0c8bcb2d87077685
+  - CienPies
+  - "Ara\xF1a"
+  - EscarabajosN
+  - manos
   layers:
   - Default
   - TransparentFX
@@ -29,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 

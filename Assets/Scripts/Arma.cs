@@ -45,14 +45,15 @@ public class Arma : MonoBehaviour
 
             BalaPrefabInstanc.AddForce(Disparo.forward * 100 * VelDis);
 
-        timer += Time.deltaTime;
+            timer += Time.deltaTime;
 
-            if (Input.GetMouseButtonDown(0) && timer > tiempoDeDisparo)
+            if (Input.GetMouseButtonDown(0))
             {
-
+                 //&& timer > tiempoDeDisparo
                 timer = 0;
 
-            restarMuni = true;
+                restarMuni = true;
+            }
         }
 
         else
