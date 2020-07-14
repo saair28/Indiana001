@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 575582891643413685}
   - component: {fileID: 575582891643413684}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cienpies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,9 @@ MonoBehaviour:
   Lim: 3
   Retard: 0
   Lim2: 3
+  vida: 20
+  player: {fileID: 0}
+  ataq: 3
 --- !u!1 &575582891736518340
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +129,7 @@ GameObject:
   - component: {fileID: 575582891736518341}
   m_Layer: 0
   m_Name: CienPies
-  m_TagString: Untagged
+  m_TagString: CienPies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

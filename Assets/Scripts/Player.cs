@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
         */
 
         jump();
-        ChangeWeapon();
 
         if (restarEs == true)
         {
@@ -171,22 +170,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-    void ChangeWeapon()
-    {/*
-        if (Input.GetAxis("Mouse ScrollWheel")) { }
-        {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            {
-                weaponNumber = (weaponNumber + 1);
-            }
-           
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            {
-                weaponNumber = (weaponNumber - 1);
-            } 
-        }
-        */
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -194,6 +177,7 @@ public class Player : MonoBehaviour
         {
             ContadorDeEscarabajos += 1;
         }
+
         if (manos == true)
         {
             if (collision.gameObject.CompareTag("Cofre"))
@@ -209,6 +193,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Municion"))
         {
             municion += 1;
+        }
+
+        if (collision.gameObject.CompareTag("Cienpies"))
+        {
+           GetComponent<Health>().RestarVida(3);
         }
     }
 }

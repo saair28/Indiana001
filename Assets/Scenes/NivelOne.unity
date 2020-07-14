@@ -1144,7 +1144,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!4 &718433897 stripped
 Transform:
@@ -1862,8 +1862,8 @@ Transform:
   m_Father: {fileID: 718433897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1334537263
-CapsuleCollider:
+--- !u!65 &1334537263
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1872,10 +1872,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3.339009
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.037567735, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.92738056, y: 3.1803508, z: 0.36079407}
+  m_Center: {x: -0.03630972, y: 0.096363306, z: 0.31960297}
 --- !u!1001 &1460592037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2036,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 056ab463c8ec9914789bbc674768aa0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.99
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 056ab463c8ec9914789bbc674768aa0a,
         type: 3}
@@ -2434,6 +2433,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1055447642468513041, guid: dccd0744c2aefd249871433ff022bedb,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055447642468513041, guid: dccd0744c2aefd249871433ff022bedb,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2346383815899325122, guid: dccd0744c2aefd249871433ff022bedb,
         type: 3}
       propertyPath: m_RootOrder
@@ -2513,7 +2522,13 @@ PrefabInstance:
         type: 3}
       propertyPath: fullHeart
       value: 
-      objectReference: {fileID: 21300000, guid: 4da42c8a5606e064dad1df36e9f804a3,
+      objectReference: {fileID: 21300000, guid: 7dbdd26a63abc2942be599a51bfd01e0,
+        type: 3}
+    - target: {fileID: 6692434422168202005, guid: dccd0744c2aefd249871433ff022bedb,
+        type: 3}
+      propertyPath: emptyHeart
+      value: 
+      objectReference: {fileID: 21300000, guid: e1ef07fb98f13d24da5d5d6dbb13abb7,
         type: 3}
     - target: {fileID: 6872575990037008064, guid: dccd0744c2aefd249871433ff022bedb,
         type: 3}
