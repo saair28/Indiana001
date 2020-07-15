@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -46,6 +47,10 @@ public class Health : MonoBehaviour
             {
                 hearts[i].enabled = false; 
             }
+        }
+        if (vida == 0)
+        {
+            SceneManager.LoadScene("Game Over");
         }
     }
     public void RestarVida(int cantidad)

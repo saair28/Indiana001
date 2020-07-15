@@ -4,31 +4,24 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Boss : MonoBehaviour
+public class BOSS : MonoBehaviour
 {
-    public int vida = 30;
-    public float velo = 10f;
-    public int ataq = 4;
+    public int vida = 10;
+    public float velo = 20f;
+    public int ataq = 2;
     public bool ataqueOn = false;
 
     public float VisionRad;
 
     public float AttackRad;
 
-    public Player player;
+    public GameObject player;
 
     public Transform player2;
 
-    public float ContSpaw;
-
     Vector3 initialPosition;
 
-    public GameObject SpawnEsca;
-
-    public EnemyEscara spawnee;
-
     public float dist;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +31,6 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = Player.instance;
-
-        spawnee = EnemyEscara.instance;
-
         this.transform.LookAt(player2);
 
         if (vida <= 0)
@@ -58,23 +47,13 @@ public class Boss : MonoBehaviour
         if (dist < VisionRad) target = player.transform.position;
 
         float fixedSpeed = velo * Time.deltaTime;
-
-
-        ContSpaw = ContSpaw + 1 * Time.deltaTime;
-
-        if (dist <= VisionRad && ContSpaw >= 8)
-        {
-            SpawnObject();
-        }
-
+        
         if (dist < AttackRad)
         {
             fixedSpeed = 0.0f;
             ataqueOn = true;
 
-        }
-
-        else if(dist > AttackRad)
+        }else if(dist > AttackRad)
         {
             ataqueOn = false;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
@@ -99,7 +78,7 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bala"))
         {
-            vida = vida - 5;
+            vida = vida - 1;
         }
 
         if (collision.gameObject.CompareTag("Player"))
@@ -113,12 +92,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void SpawnObject()
-    {
-        Instantiate(spawnee, SpawnEsca.transform.position , transform.rotation);
-
-        ContSpaw = 0;
-    }
+    
 
     public void Movimiento()
     {

@@ -11,15 +11,17 @@ public class ColliderLash : MonoBehaviour
     public float journeyLength = 1.0f;
     private float startTime;
     public bool loop = false;
-    public bool lashActivated = false;
+    public bool lashActivated = true;
     public GameObject ArañaE;
 
     // Start is called before the first frame update
     void Start()
     {
-      
-        
+        lashActivated = true;
+
     }
+
+
 
     // Update is called once per frame
     void Update()
